@@ -3,24 +3,42 @@
   <head>
     <title><%= title %></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
     <%- include('header') -%>
-    <% messages.forEach(function(message) { %>
-      <div class="col s12 m7">
-        <h3 class="header"><%= message.title %></h3>
-        <div class="card horizontal">
-          <div class="card-stacked">
-            <div class="card-content">
-              <p><%= message.body %></p>
-            </div>
-            <div class="card-content">
-              <p><%= message.timestamp %></p>
+    <div class="container">
+      <% messages.forEach(function(message) { %>
+        <div class="col s12 m7">
+          <h3 class="header" style="font-size: 2.3rem"><%= message.title %></h3>
+          <div class="card horizontal">
+            <div class="card-stacked">
+              <div class="card-content">
+                <p><%= message.body %></p>
+              </div>
+              <div class="card-content">
+                <span>
+                  <i class="material-icons" style="position: relative; top: 6px">access_time</i>
+                  <%= message.timestamp %>
+                </span>
+                <br />
+                <% if (currentUser && (currentUser.membershipStatus === 'member' || currentUser.membershipStatus === 'admin')) { %>
+                  <span>
+                    <i class="material-icons" style="position: relative; top: 6px">person</i>
+                    <%= currentUser.getFullName %>
+                  </span>
+                <% } else { %>
+                  <span>
+                    <i class="material-icons" style="position: relative; top: 6px">person</i>
+                    Unknown
+                  </span>
+                <% } %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    <% }); %>
+      <% }); %>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
