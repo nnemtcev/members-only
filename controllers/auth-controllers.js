@@ -54,7 +54,10 @@ function signInPageGet(req, res) {
 };
 
 function becomeMemberPageGet(req, res, next) {
-    res.render('become-member');
+    if (req.user) {
+        res.render('become-member');
+    }
+    res.render('sign-in');
 };
 
 function becomeMemberPagePost(req, res, next) {

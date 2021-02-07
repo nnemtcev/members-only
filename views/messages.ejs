@@ -33,6 +33,9 @@
                     Unknown
                   </span>
                 <% } %>
+                <% if (currentUser && currentUser.membershipStatus === 'admin') { %>
+                  <a href="/message/delete/<%= message.id %>" style="float: right" class="waves-effect waves-light btn-small blue"><i class="material-icons right">delete</i>Delete</a>
+                <% } %>
               </div>
             </div>
           </div>

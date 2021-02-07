@@ -36,4 +36,11 @@ function displayMessagesPageGet(req, res, next) {
     });
 };
 
-module.exports = { createMessagePageGet, createMessagePagePost, displayMessagesPageGet };
+function deleteMessage(req, res, next) {
+    Message.findByIdAndRemove(req.params.id, function(err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+    });
+};
+
+module.exports = { createMessagePageGet, createMessagePagePost, displayMessagesPageGet, deleteMessage };
