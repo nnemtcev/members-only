@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Members Only | Create a Message</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <%- include('header') -%>
+        <div class="container" style="width: 60%">
+            <form method="POST" action="/create-message">
+                <div class="input-field col s6">
+                    <h1 style="font-size: 35px; text-align: center">Create a New Message</h1>
+                    <input placeholder="Enter your message title here" required type="text" name="title" />
+                </div>
+                <div class="input-field col s6">
+                    <textarea class="materialize-textarea" name="message" id="message"></textarea>
+                    <label for="message">Enter your message here</label>
+                </div>
+                <button class="btn waves-effect waves-light blue" type="submit" name="action">Create Message</button>
+            </form>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+</html>

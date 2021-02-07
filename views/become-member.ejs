@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    </head>
+    <body>
+        <%- include('header') -%>
+        <div class="container" style="width: 60%">
+            <form method="POST" action="/become-member">
+                <div class="input-field col s6">
+                    <h1 style="font-size: 35px; text-align: center">Type in the Secret Password to Become a Member</h1>
+                    <input placeholder="Enter secret password" type="password" name="password" required>
+                </div>
+                <button class="btn waves-effect waves-light blue" type="submit" name="action">Become Member</button>
+            </form>
+        </div>
+    </body>
+</html>

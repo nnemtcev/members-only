@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="utf-8">
+        <title>Members Only | Sign Up</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    </head>
+    <body>
+        <%- include('header.ejs') -%>
+        <div class="container" style="width: 60%">
+            <form method="POST" action="">
+                <div class="input-field col s6">
+                    <h1 style="font-size: 35px; text-align: center">Sign Up for Members Only</h1>
+                    <input placeholder="Enter email" required type="email" name="email" id="email" />
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Enter password" required type="password" name="password" />
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Confirm password" required type="password" name="confirmPassword" />
+                </div>
+                <button class="btn waves-effect waves-light blue" type="submit" name="action">Sign Up</button>
+            </form>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </body>
+</html>

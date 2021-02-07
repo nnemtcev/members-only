@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    </head>
+    <body>
+        <nav class="blue">
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo" style="margin-left: 20px;">Members Only</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <% if (currentUser) { %>
+                        <li><a href="/create-message">Create Message</a></li>
+                        <li><a href="/become-member">Upgrade to a Member</a></li>
+                        <li><a href="/sign-out">Sign Out</a></li>
+                    <% } else { %>
+                        <li><a href="/sign-up">Sign Up</a></li>
+                        <li><a href="/sign-in">Sign In</a></li>
+                    <% } %>
+                </ul>
+            </div>
+        </nav>
+    </body>
+</html>
