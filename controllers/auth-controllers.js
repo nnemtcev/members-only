@@ -37,12 +37,12 @@ const signUpPagePost = [
                     lastName: 'Smith',
                     email: req.body.email,
                     password: encryptedPassword,
-                    membershipStatus: 'standard'
+                    membershipStatus: req.body.isAdmin ? 'admin' : 'standard'
                 });
 
                 newUser.save(function(err) {
                     if (err) { return next(err); }
-                    res.redirect('/sign-up');
+                    res.redirect('/sign-in');
                 });
             });
         });
